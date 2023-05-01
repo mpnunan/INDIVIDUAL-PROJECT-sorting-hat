@@ -2,7 +2,7 @@ console.log('You were particularly difficult to place. But I stand by what I sai
 
 const studentArr = [];
 const deatheaterArr = [];
-const worldOfMagicArr = [
+const allMagicUsers = [
   studentArr,
   deatheaterArr
 ];
@@ -15,7 +15,7 @@ const worldOfMagicArr = [
 const magicLicense = (num, num2) => {
   // function to create unique id, first checking to see if a student object already has same id
   let idNum = num + num2 + 1;
-  for (let arr of data) {
+  for (let arr of allMagicUsers) {
     for (let obj of arr) {
       if (idNum === obj.id) {
         return idNum += 7;
@@ -50,7 +50,7 @@ const houseSort = () => {
 
 
 
-const witchWizard = (name) => {
+const witchWizard = name => {
   return {
   id: magicLicenseNumber,
   name: name,
