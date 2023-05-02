@@ -1,4 +1,78 @@
 body {
   background-image: url('https://images.unsplash.com/photo-1583997052103-b4a1cb974ce5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80');
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card, #sorting-hat, #hat-card {
+  display: flex;
+  margin-top: 6.5%;
+  justify-content: center;
+  text-align: center;
+  width: 55%;
+  background-color: transparent;
+  color: black;
+  text-shadow: 0px 0px 1px black;
+  border-color: transparent;
+  border-radius: 100px;
+  font-size: xx-large;
+  font-family: Garamond, serif;
+  backdrop-filter: blur(10px);
+ 
+}
+
+.card-header {
+  border-color: transparent;
+  text-align: center;
+  background-color: transparent;
+}
+
+.card-title {
+  font-size: xx-large;
+}
+
+#hat-btn {
+  background-color: black;
+  border-color: transparent;
+  color: gainsboro;
+  text-shadow: 0px 0px 1px whitesmoke;
+  
+
+}
+
+#hat-btn:hover {
+  background-color: #626262;
+}
+
+#hat-btn:active, #hat-btn:focus {
+  background: linear-gradient(to right, #841517, #eaab00, #362f7c, #196b3b);
+  
+}
+
+#sort-form {
+  font-family: Garamond, serif;
+  margin-top: 40%;
+  
+}
+
+
+#sort-form-btn {
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  color: black;
+}
+#button-addon2 {
+  background-color: black;
+  color: gainsboro;
+}
+
+#button-addon2:hover {
+  background-color: #626262;
+}
+
+#button-addon2:active, #button-addon2:focus {
+  background: linear-gradient(to right, #841517, #eaab00, #362f7c, #196b3b);
 }
