@@ -1,7 +1,5 @@
 console.log('You were particularly difficult to place. But I stand by what I said last year. You would have done well in Slytherin.');
 
-
-
 // utility functions
 
 const accioHtml = (divId, htmlRender) => {
@@ -30,7 +28,6 @@ const hatOnDom = () => {
 </div>`
 
 accioHtml("#sorting-hat", hatDomString);
-
 }
 
 hatOnDom();
@@ -46,7 +43,7 @@ const sortFormDomString =
   accioHtml("#sorting-container", sortFormDomString);
 };
 
-
+// data arrays
 
 const studentArr = [
   {
@@ -75,10 +72,7 @@ const allMagicUsers = [
   deatheaterArr
 ];
 
-
-
 // Object creation functions
-
 
 const magicLicense = (num, num2) => {
   // function to create unique id, first checking to see if a student object already has same id
@@ -92,9 +86,7 @@ const magicLicense = (num, num2) => {
   }
   return idNum;
 };
-
-
-
+// sorting function using random numbers
 const houseSort = () => {
   const sortNum = Math.floor(Math.random() * 4);
   let houseName = "";
@@ -112,17 +104,7 @@ const houseSort = () => {
   return houseName
  };
  
-
-
-
-
-
-
-
-
-
-
-
+//  functions to put cards on dom
 const studentBody = allMagicUsers[0];
 const deatheaters = allMagicUsers[1];
 
@@ -150,7 +132,6 @@ const accioStudents = () => {
   }
 
   accioHtml("#student-body", studentCardDomString);
-
 }
 
 const accioDeatheaters = () => {
@@ -175,39 +156,26 @@ const accioDeatheaters = () => {
 </div>`
   }
 accioHtml("#deatheaters", deatheaterCardDomString)
-
 }
 
-
-
-
-
-
-
-
-
-
+// hides greeting element 
 const hideSortingForm = () =>  {
   document.querySelector("#hat-card").style.display = "none";
 };
 
-
-
+// functions that run when greeting button is clicked
 document.querySelector("#hat-btn").addEventListener("click", () => {
   sortFormOnDom();
   hideSortingForm();
   accioStudents();
   accioDeatheaters();
-  
 });
-
+// functions to use input name to generate card  
 
 const form = document.querySelector("form");
 
 const newStudent = (e) => {
   e.preventDefault();
-
-
 
   const witchWizardObj = {
 
@@ -217,15 +185,10 @@ const newStudent = (e) => {
     expelled: false
   }
 
- 
-
-
   studentBody.push(witchWizardObj);
   accioStudents();
   accioDeatheaters();
   form.reset();
- 
-
 }
 
 form.addEventListener("submit", newStudent);
