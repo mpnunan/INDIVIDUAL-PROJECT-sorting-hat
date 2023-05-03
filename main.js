@@ -39,11 +39,11 @@ hatOnDom();
 const sortFormOnDom = () => {
 const sortFormDomString =
 `<div class="input-group mb-3" id="sort-form">
-  <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="button-addon2" id="sort-form-name" required>
+  <input type="text" class="form-control" id="input-name" placeholder="Name" aria-label="Name" aria-describedby="button-addon2"  required>
   <button type="submit" class="btn btn-outline-secondary" id="button-addon2">But where to put you?</button>
 </div>`
 
-  accioHtml("#sorting-form", sortFormDomString);
+  accioHtml("#sorting-container", sortFormDomString);
 };
 
 
@@ -93,8 +93,7 @@ const magicLicense = (num, num2) => {
   return idNum;
 };
 
-const magicLicenseNumber = magicLicense(studentArr.length, deatheaterArr.length);
-console.log(magicLicenseNumber);
+
 
 const houseSort = () => {
   const sortNum = Math.floor(Math.random() * 4);
@@ -113,21 +112,11 @@ const houseSort = () => {
   return houseName
  };
  
- let house = houseSort();
- console.log(house);
- 
 
 
 
-// const witchWizard = () => {
-//   return {
-//   id: magicLicenseNumber,
-//   name: document.querySelector("#sort-form-name").value,
-//   house: house,
-//   expelled: false
-//   };
 
-// };
+
 
 
 
@@ -196,9 +185,7 @@ accioHtml("#deatheaters", deatheaterCardDomString)
 
 
 
-// sortFormOnDom();
 
-// const showSortingForm = document.querySelector("#button-addon2");
 
 const hideSortingForm = () =>  {
   document.querySelector("#hat-card").style.display = "none";
@@ -215,6 +202,7 @@ document.querySelector("#hat-btn").addEventListener("click", () => {
 });
 
 
+const form = document.querySelector("form");
 
 const newStudent = (e) => {
   e.preventDefault();
@@ -223,9 +211,9 @@ const newStudent = (e) => {
 
   const witchWizardObj = {
 
-    id: magicLicenseNumber,
-    name: document.querySelector("#sort-form-name").value,
-    house: house,
+    id: magicLicense(studentArr.length, deatheaterArr.length),
+    name: document.querySelector("#input-name").value,
+    house: houseSort(),
     expelled: false
   }
 
@@ -235,15 +223,9 @@ const newStudent = (e) => {
   studentBody.push(witchWizardObj);
   accioStudents();
   accioDeatheaters();
-  document.querySelector("#sort-form").reset();
+  form.reset();
  
 
 }
 
-console.log(newStudent());
-
-
-document.querySelector("#button-addon2").addEventListener("click", () => {
-  newStudent();
-
-});
+form.addEventListener("submit", newStudent);
