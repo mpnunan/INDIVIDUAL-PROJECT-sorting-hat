@@ -7,7 +7,7 @@ body {
   justify-content: center;
 }
 
-.card, #sorting-hat, #hat-card {
+#sorting-hat, #hat-card {
   display: flex;
   margin-top: 6.5%;
   justify-content: center;
@@ -24,13 +24,13 @@ body {
  
 }
 
-.card-header {
+#card-header-splash {
   border-color: transparent;
   text-align: center;
   background-color: transparent;
 }
 
-.card-title {
+#card-title-splash {
   font-size: xx-large;
 }
 
@@ -59,7 +59,7 @@ body {
 }
 
 
-#sort-form-btn {
+#sort-form-name {
   background-color: transparent;
   backdrop-filter: blur(10px);
   color: black;
@@ -75,4 +75,10 @@ body {
 
 #button-addon2:active, #button-addon2:focus {
   background: linear-gradient(to right, #841517, #eaab00, #362f7c, #196b3b);
+}
+
+#studentsNotStudents {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
