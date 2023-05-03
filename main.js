@@ -25,7 +25,7 @@ const hatOnDom = () => {
     And don't get in a flap!
     You're in safe hands (though I have none)
     for I'm a thinking cap!</p>
-    <a href="#" class="btn btn-primary" id="hat-btn">Nitwit! Blubber! Oddment! Tweak!</a>
+    <a href="#" class="btn btn-primary" id="hat-btn">Step forward.</a>
   </div>
 </div>`
 
@@ -39,11 +39,11 @@ hatOnDom();
 const sortFormOnDom = () => {
 const sortFormDomString =
 `<div class="input-group mb-3" id="sort-form">
-  <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="button-addon2" id="sort-form-name" required>
-  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Get Sorted</button>
+  <input type="text" class="form-control" id="input-name" placeholder="Name" aria-label="Name" aria-describedby="button-addon2"  required>
+  <button type="submit" class="btn btn-outline-secondary" id="button-addon2">But where to put you?</button>
 </div>`
 
-  accioHtml("#sorting-form", sortFormDomString);
+  accioHtml("#sorting-container", sortFormDomString);
 };
 
 
@@ -93,7 +93,7 @@ const magicLicense = (num, num2) => {
   return idNum;
 };
 
-let magicLicenseNumber = magicLicense(studentArr.length, deatheaterArr.length);
+
 
 const houseSort = () => {
   const sortNum = Math.floor(Math.random() * 4);
@@ -112,21 +112,16 @@ const houseSort = () => {
   return houseName
  };
  
- let house = houseSort();
- console.log(house);
- 
 
 
 
-const witchWizard = name => {
-  return {
-  id: magicLicenseNumber,
-  name: name,
-  house: house,
-  expelled: false
-  };
 
-};
+
+
+
+
+
+
 
 const studentBody = allMagicUsers[0];
 const deatheaters = allMagicUsers[1];
@@ -140,7 +135,7 @@ const accioStudents = () => {
     `<div class="card mb-3" id="card-${student.id}"style="max-width: 540px;">
       <div class="row g-0">
         <div class="col-md-4">
-          <img src="..." class="img-fluid rounded-start" alt="...">
+          // <img src="..." class="img-fluid rounded-start" alt="...">
         </div>
         <div class="col-md-8">
           <div class="card-body">
@@ -148,6 +143,7 @@ const accioStudents = () => {
             <p class="card-text">${student.house}</p>
             <p class="card-text"><small class="text-muted">Welcome to Hogwarts</small></p>
           </div>
+          <button class="studentCardBtn" id="studentCardBtn-${student.id}"></button>
         </div>
       </div>
   </div>`
@@ -165,14 +161,15 @@ const accioDeatheaters = () => {
     `<div class="card mb-3" id="card-${deatheater.id}"style="max-width: 540px;">
     <div class="row g-0">
       <div class="col-md-4">
-        <img src="..." class="img-fluid rounded-start" alt="...">
+        // <img src="..." class="img-fluid rounded-start" alt="...">
       </div>
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title">${deatheater.name}</h5>
           <p class="card-text">${deatheater.house}</p>
-          <p class="card-text"><small class="text-muted">Welcome to Hogwarts</small></p>
+          <p class="card-text"><small class="text-muted">Morsmordre</small></p>
         </div>
+        <button class="deatheaterCardBtn" id="deatheaterCardBtn-${deatheater.id}"></button>
       </div>
     </div>
 </div>`
@@ -185,9 +182,10 @@ accioHtml("#deatheaters", deatheaterCardDomString)
 
 
 
-// sortFormOnDom();
 
-const showSortingForm = document.querySelector("#button-addon2");
+
+
+
 
 const hideSortingForm = () =>  {
   document.querySelector("#hat-card").style.display = "none";
@@ -202,3 +200,32 @@ document.querySelector("#hat-btn").addEventListener("click", () => {
   accioDeatheaters();
   
 });
+
+
+const form = document.querySelector("form");
+
+const newStudent = (e) => {
+  e.preventDefault();
+
+
+
+  const witchWizardObj = {
+
+    id: magicLicense(studentArr.length, deatheaterArr.length),
+    name: document.querySelector("#input-name").value,
+    house: houseSort(),
+    expelled: false
+  }
+
+ 
+
+
+  studentBody.push(witchWizardObj);
+  accioStudents();
+  accioDeatheaters();
+  form.reset();
+ 
+
+}
+
+form.addEventListener("submit", newStudent);

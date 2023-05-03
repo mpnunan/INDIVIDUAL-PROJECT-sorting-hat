@@ -48,7 +48,7 @@ body {
 }
 
 #hat-btn:active, #hat-btn:focus {
-  background: linear-gradient(to right, #841517, #eaab00, #362f7c, #196b3b);
+  background: linear-gradient(to right, #1c0000, #5b4a08, #362f7c, #001400);
   
 }
 
@@ -59,7 +59,7 @@ body {
 }
 
 
-#sort-form-name {
+#input-name {
   background-color: transparent;
   backdrop-filter: blur(10px);
   color: black;
@@ -74,7 +74,7 @@ body {
 }
 
 #button-addon2:active, #button-addon2:focus {
-  background: linear-gradient(to right, #841517, #eaab00, #362f7c, #196b3b);
+  background: linear-gradient(to right, #1c0000, #5b4a08, #362f7c, #001400);
 }
 
 #studentsNotStudents {
