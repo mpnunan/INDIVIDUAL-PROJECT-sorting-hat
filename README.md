@@ -1,4 +1,4 @@
-# This is the name of my Project [![Netlify Status](https://api.netlify.com/api/v1/badges/5683836a-2e15-4bcb-8168-8111b64d86a4/deploy-status)](https://app.netlify.com/sites/nitwit-blubber-oddment-tweak/deploys)
+# Sorting Hat [![Netlify Status](https://api.netlify.com/api/v1/badges/5683836a-2e15-4bcb-8168-8111b64d86a4/deploy-status)](https://app.netlify.com/sites/nitwit-blubber-oddment-tweak/deploys)
 
 
 Here I am putting an overview of what my project is about. It comes below the name of my project so that others can read what it is about and get more details.
