@@ -79,6 +79,140 @@ body {
 
 #studentsNotStudents {
   display: flex;
-  justify-content: space-evenly;
+  width: 85%;
+  justify-content: center;
   align-items: center;
+  margin-top: 40px;
+
+}
+
+
+
+
+#student-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 20px 20px;
+  font-family: Garamond, serif;
+  width: 100%;
+}
+
+#deatheaters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 20px 20px;
+  font-family: Garamond, serif;
+  width: 100%;
+}
+
+.studentCard {
+height: 180px;
+width: 260px;
+background-color: transparent;
+backdrop-filter: sepia(80%) blur(20px);
+}
+
+.deatheaterCard {
+height: 240px;
+width: 260px;
+background-color: transparent;
+backdrop-filter: sepia(80%) blur(20px);
+
+}
+
+.card-img {
+  height: 180px;
+  width: auto; 
+}
+
+.deatheater-card-img {
+  height: 240px;
+  width: auto
+}
+
+.cardBtn {
+  width: 140px;
+  height: 25px;
+  margin: 5px;
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
+  font-size: .7em;
+  color: gainsboro;
+  background-color: black;
+  border-color: black;
+
+}
+
+.deatheaterCardBtn1 {
+font-size: .8em;
+}
+
+.deatheaterCardBtn2 {
+  height: 50px;
+}
+
+.cardBtn:hover {
+  background-color: #626262;
+}
+
+.cardBtn:active {
+  background: linear-gradient(to right, #1c0000, #5b4a08, #362f7c, #001400);
+}
+
+#btn-row {
+  display: flex;
+  width: 60%;
+  background-color: transparent;
+  justify-content: space-evenly;
+  margin-top: 40px;
+}
+
+#gryffindor-btn {
+  width: 15%;
+  border: 3px solid #780001;
+  border-radius: 5px;
+  background-color: black;
+  color: gainsboro;
+}
+
+#hufflepuff-btn {
+  width: 15%;
+  border: 3px solid #EBBF16;
+  border-radius: 5px;
+  background-color: black;
+  color: gainsboro;
+}
+
+#ravenclaw-btn {
+  width: 15%;
+  border: 3px solid #463EA3;
+  border-radius: 5px;
+  background-color: black;
+  color: gainsboro;
+}
+
+#slytherin-btn {
+  width: 15%;
+  border: 3px solid #008A00;
+  border-radius: 5px;
+  background-color: black;
+  color: gainsboro;
+}
+
+#hogwarts-btn {
+  width: 15%;
+  border: 3px solid black;
+  border-radius: 5px;
+  background-color: black;
+  color: gainsboro;
+}
+
+#btn-row > *:hover {
+  background-color: #626262;
+}
+
+#btn-row > *:active {
+  background: linear-gradient(to right, #1c0000, #5b4a08, #362f7c, #001400);
 }
