@@ -20,7 +20,7 @@ body {
   border-radius: 100px;
   font-size: xx-large;
   font-family: Garamond, serif;
-  backdrop-filter: blur(10px);
+  backdrop-filter: sepia(100%) blur(30px);
  
 }
 
@@ -111,14 +111,17 @@ body {
 height: 180px;
 width: 260px;
 background-color: transparent;
-backdrop-filter: sepia(80%) blur(20px);
+backdrop-filter: sepia(100%) blur(45px);
+font-weight: bolder;
+
 }
 
 .deatheaterCard {
 height: 240px;
 width: 260px;
 background-color: transparent;
-backdrop-filter: sepia(80%) blur(20px);
+backdrop-filter: sepia(100%) blur(45px);
+font-weight: bolder;
 
 }
 
