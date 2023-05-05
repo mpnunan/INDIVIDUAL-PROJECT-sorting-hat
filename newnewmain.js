@@ -168,7 +168,7 @@ const accioDeatheaters = () => {
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title">${deatheater.name}</h5>
-          <p class="card-text">${deatheater.house}</p>
+          <p class="card-text">Deatheater</p>
           <p class="card-text"><small class="text-muted">Morsmordre</small></p>
         </div>
         <button type="button" class="cardBtn deatheaterCardBtn1" id="redeem--${deatheater.id}">Redeem</button>
@@ -236,13 +236,14 @@ const cardActions = () => {
   const allStudents = document.querySelector("#student-body");
 
   const expelButton = () => {
-    allStudents.addEventListener('click', (e) => {
-      if (e.target.id.includes('expel')) {
-        const [, id] = e.target.id.split('--');
-        const index = studentArr.findIndex(e => e.id === Number(id)); 
-        const newlyDark = studentArr[index];
-        deatheaterArr.splice(newlyDark);
-        studentArr.splice(index, 1);
+    allStudents.addEventListener("click", (e) => {
+      if (e.target.id.includes("expel")) {
+        const [, id] = e.target.id.split("--");
+        const index = studentArr.findIndex(e => Number(id) === e.id); 
+        const newlyDark = studentArr.splice(index, 1);
+        deatheaterArr.push(newlyDark[0]);
+        
+        
 
         accioStudents(studentArr);
         accioDeatheaters();
@@ -258,9 +259,9 @@ const cardActions = () => {
       if (e.target.id.includes('redeem')) {
         const [, id] = e.target.id.split('--');
         const index = deatheaterArr.findIndex(e => e.id === Number(id)); 
-        const backToLight = deatheaterArr[index];
-        studentArr.splice(backToLight);
-        deatheaterArr.splice(index, 1);
+        const backToLight = deatheaterArr.splice(index, 1);
+        studentArr.push(backToLight);
+        
 
         accioStudents(studentArr);
         accioDeatheaters();
@@ -297,7 +298,7 @@ const hatActions = () => {
       buttonsOnDom();
       cardActions();
       hatOffDom();
-
+      form.addEventListener("submit", newStudent);
 };
 
 
@@ -306,7 +307,7 @@ const hatButton = () => {
 
     if (e.target.id.includes("hat-btn")) {
       hatActions();
-      console.log('clicked');
+      
     }
   });
   
